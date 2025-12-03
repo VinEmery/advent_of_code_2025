@@ -29,16 +29,11 @@ def solve(banks: List[str]) -> int:
 
 def main() -> None:
     script_path = Path(__file__).resolve()
-
-    # Extract day number from script name, e.g. "day03" -> 3
     day_digits = "".join(ch for ch in script_path.stem if ch.isdigit())
-    day_num = int(day_digits)  # 3
-
-    # Input file: input_day3.txt, input_day4.txt, ...
+    day_num = int(day_digits)
     input_name = f"input_day{day_num}.txt"
     input_path = script_path.with_name(input_name)
 
-    # Read all non-empty lines as banks
     banks = [
         line.strip()
         for line in input_path.read_text().splitlines()
